@@ -42,8 +42,8 @@
             </div>
             <form action="check.php" method="post">
 
-              <input class="form-control" type="text" name="username" placeholder="Username">
-              <input class="form-control" type="password" name="password" placeholder="Password">
+              <input class="form-control" type="text" name="username" placeholder="Username" required>
+              <input class="form-control" type="password" name="password" placeholder="Password" required>
               <div class='radio'>
                 <label>
                   <input type='radio' name='remember' disabled>
@@ -66,9 +66,9 @@
               <p>Create New Account</p>
             </div>
             <form action="check.php" method="post">
-              <input class="form-control" type="email" name="email" placeholder="Email">
-              <input class="form-control" type="text" name="username" placeholder="Username">
-              <input class="form-control" type="password" name="password" placeholder="Password">
+              <input class="form-control" type="email" name="email" placeholder="Email" required>
+              <input class="form-control" type="text" name="username" placeholder="Username" required>
+              <input class="form-control" type="password" name="password" placeholder="Password" required>
 
               <button class="submit" type="submit" name="signup">Sign Up</button>
               <?php if(isset($_SESSION["signerror"])) echo $_SESSION["signerror"]; session_destroy(); ?>

@@ -1,11 +1,17 @@
 $(".show-signup").on("click", function(){
   $(".signup").removeClass("hide");
   $(".login").addClass("hide");
+  if($(window).width() > 400) {
+    $(".signup").marginLeftCalc();
+  }
 });
 
 $(".show-login").on("click", function(){
   $(".signup").addClass("hide");
   $(".login").removeClass("hide");
+  if($(window).width() > 400) {
+    $(".login").marginLeftCalc();
+  }
 });
 
 $.fn.marginLeftCalc = function() {
@@ -18,5 +24,5 @@ $.fn.marginLeftCalc = function() {
 };
 
 if($(window).width() > 400) {
-  $(".login, .signup").marginLeftCalc();
+  $(".login").marginLeftCalc();
 }

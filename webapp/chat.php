@@ -38,9 +38,11 @@
         $result=mysql_query("SELECT * FROM user");
         while($row=mysql_fetch_assoc($result)):
         ?>
-        <?php 
+        <!-- Usernames -->
+        <?php
           echo $row["username"]  . "<br>";
         ?>
+        <!-- end -->
         <?php
         endwhile;
       ?>
@@ -54,4 +56,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
-

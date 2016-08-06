@@ -27,7 +27,7 @@ if($(window).width() > 400) {
   $(".login").marginLeftCalc();
 }
 
-// ajax
+// ajax to show chats
 $(".get-data").click(function(){
   var id = (this.getAttribute('id'));
   $.ajax({
@@ -39,5 +39,20 @@ $(".get-data").click(function(){
       console.log(data);
     }
   });
+
+});
+
+
+// Show chats on clicking a user li
+$(".user-list li").on("click", function(){
+  $(".sidebar").addClass("hide");
+  $(".chat-wrap").removeClass("hide");
+
+});
+
+// Hide chats on  clicking back button
+$(".back").on("click", function(){
+  $(".chat-wrap").addClass("hide");
+  $(".sidebar").removeClass("hide");
 
 });

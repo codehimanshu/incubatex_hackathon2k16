@@ -54,7 +54,8 @@
                 <!-- User list` -->
                 <ul class="user-list">
                     <?php
-                      $result=mysql_query("SELECT * FROM user");
+                      $username=$_SESSION["user"];
+                      $result=mysql_query("SELECT * FROM user WHERE username!='$username'");
                       while($row=mysql_fetch_assoc($result)):
                       ?>
 
@@ -68,10 +69,10 @@
                       ?>
                     </li>
 
-
                       <?php
                       endwhile;
                     ?>
+
                 </ul>
               </div>
             </div>
@@ -88,15 +89,9 @@
 
               <div class="row">
                   <div class="chat">
-                      <div class="sender"> ksdja asjd</div>
-                      <div class="receiver">sakdjlks</div>
-                      <div class="sender"> ksdja asjd</div>
-                      <div class="receiver">sakdjlks</div>
-                      <div class="sender"> ksdja asjd</div>
-                      <div class="receiver">sakdjlks</div>
-                      <div style="clear:both;">
 
-                      </div>
+                  </div>
+                  <div style="clear:both;">
                   </div>
               </div>
 

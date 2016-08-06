@@ -28,3 +28,4 @@
 		endwhile;
 	}
 ?>
+                  <div style="clear:both;">

@@ -35,7 +35,7 @@
     <!--login-->
     <div class='container-fluid '>
       <div class="row">
-          <div class="login text-center col-xs-12 col-sm-4 col-sm-push-4">
+          <div class="login text-center col-xs-12 col-sm-5 col-md-4 not-center">
             <div class="top">
               <span class="fa fa-envira fa-2x"></span>
               <p>Web Login</p>
@@ -60,7 +60,7 @@
           </div>
       </div>
       <div class="row">
-          <div class="signup hide text-center col-xs-12  col-sm-4 col-sm-push-4">
+          <div class="signup hide text-center col-xs-12  col-sm-5 col-md-4 not-center">
             <div class="top">
               <span class="fa fa-envira fa-2x"></span>
               <p>Create New Account</p>

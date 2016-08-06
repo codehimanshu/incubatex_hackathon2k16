@@ -11,8 +11,12 @@ $(".show-login").on("click", function(){
 $.fn.marginLeftCalc = function() {
   return this.each(function(){
     var marginLeft  = ( $(window).width() - $(this).width() ) / 2 ;
-    $(this).css({"margin-left" : marginLeft });
+    if($(this).hasClass("not-center")) {
+      $(this).css({"margin-left" : marginLeft }).removeClass("not-center");
+    }
   });
 };
 
-$(".login, .signup").marginLeftCalc();
+if($(window).width() > 400) {
+  $(".login, .signup").marginLeftCalc();
+}

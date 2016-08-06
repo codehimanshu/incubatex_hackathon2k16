@@ -11,7 +11,7 @@
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -27,14 +27,57 @@
   <section>
 
     <!--login-->
-    <form action="check.php" method="post">
-      //form fields
-    </form>
+    <div class='container-fluid '>
+      <div class="row">
+          <div class="login col-xs-12 col-sm-4">
+            <div class="">
+              <span class="fa fa-envira"></span>
+              <p>Web Login</p>
+            </div>
+            <form action="check.php" method="post">
+              <input class="form-control" type="text" name="username" placeholder="Username">
+              <input class="form-control" type="password" name="password" placeholder="Password">
+              <div class='radio'>
+                <label>
+                  <input type='radio' name='remember' disabled>
+                  Remember Me
+                </label>
+              </div>
 
-    <!--sign up-->
-    <form action="check.php" method="post">
-      //form fields
-    </form>
+              <button type="submit" name="button">Login</button>
+
+              <div class="bottom">
+                <p> Dont have a acoount? <a class="show-signup">Sign Up</a></p>
+              </div>
+            </form>
+          </div>
+      </div>
+      <div class="row">
+          <div class="signup col-xs-12 col-sm-4">
+            <div class="">
+              <span class="fa fa-envira"></span>
+              <p>Create New Account</p>
+            </div>
+            <form action="check.php" method="post">
+              <input class="form-control" type="text" name="username" placeholder="Username">
+              <input class="form-control" type="password" name="password" placeholder="Password">
+              <div class='radio'>
+                <label>
+                  <input type='radio' name='remember' disabled>
+                  Remember Me
+                </label>
+              </div>
+
+              <button type="submit" name="button">Sign Up</button>
+
+              <div class="bottom">
+                <p> Already have an acoount? <a class="show-login">Sign In</a></p>
+              </div>
+            </form>
+          </div>
+      </div>
+    </div>
+
 
     <!--login as a guest-->
     <a href="dashboard.php">Login as Guest</a>

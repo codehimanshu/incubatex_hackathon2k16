@@ -64,7 +64,7 @@
                       ?>
                       <?php
                         if($row["status"]==1)
-                        	echo "<span></span>";
+                        	echo "<span class='active'></span>";
                       ?>
                     </li>
 
@@ -84,6 +84,12 @@
                 <button type="button" class="back btn btn-default dropdown-toggle pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="fa fa-angle-left fa-2x"></span>
                 </button>
+              </div>
+
+              <div class="row">
+                  <div class="chat">
+
+                  </div>
               </div>
 
 

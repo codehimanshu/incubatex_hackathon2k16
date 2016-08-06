@@ -17,7 +17,7 @@ if(isset($_POST['id']))
 		while($row=mysql_fetch_assoc($result)):
 		?>
 		<?php
-			if($row["sender"]==$id):
+			if($row["senqder"]==$id):
 			?>
 			<div class=sender>
 				<?php echo $row["message"]; ?>

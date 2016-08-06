@@ -26,3 +26,18 @@ $.fn.marginLeftCalc = function() {
 if($(window).width() > 400) {
   $(".login").marginLeftCalc();
 }
+
+// ajax
+$(".get-data").click(function(){
+  var id = (this.getAttribute('id'));
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
+    data : "id="+id,
+    success: function(data) {
+      $(".user-data").html(data);
+      console.log(data);
+    }
+  });
+
+});

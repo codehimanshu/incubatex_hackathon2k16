@@ -40,17 +40,21 @@
         ?>
         <!-- Usernames -->
         <?php
+          echo "<button id='$row[id]' type=button class=get-data name=button>";
           echo $row["username"]  . "<br>";
         ?>
         <?php
-          echo "<br>" . $row["username"];
           if($row["status"]==1)
           	echo "<span></span>";
         ?>
+        </button>
+
         <!-- end -->
         <?php
         endwhile;
       ?>
+
+      <div class="user-data"></div>
 	  </section>
 	  <footer>
 
@@ -59,5 +63,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
   </body>
 </html>

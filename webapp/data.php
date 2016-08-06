@@ -2,6 +2,7 @@
 
 	if(isset($_POST['id']))
 	{
+		
 		require_once 'db_connect.php';
 		$id=$_POST["id"];
 		$result=mysql_query("SELECT * FROM message WHERE sender='$id' OR receiver='$id'",$link) or die(mysql_error());

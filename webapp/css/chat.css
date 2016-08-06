@@ -26,6 +26,55 @@
         padding: 10px; }
       .chat-box .list .user-list li:not(:last-child) {
         border-bottom: 1px solid #ccc; }
+  .chat-box .chat-wrap .row .chat {
+    background: url("../img/pattern.png");
+    padding: 10px 0; }
+    .chat-box .chat-wrap .row .chat .sender, .chat-box .chat-wrap .row .chat .receiver {
+      padding: 5px;
+      word-break: break-word; }
+    .chat-box .chat-wrap .row .chat .sender {
+      position: relative;
+      float: right;
+      clear: left;
+      background: #a9c52f;
+      margin: 8px 12px 0 80px; }
+      .chat-box .chat-wrap .row .chat .sender:after {
+        content: "";
+        height: 8px;
+        position: absolute;
+        width: 10px;
+        border-top-right-radius: 55px;
+        display: block;
+        background: #a9c52f;
+        right: -8px;
+        bottom: 0px; }
+    .chat-box .chat-wrap .row .chat .receiver {
+      position: relative;
+      float: left;
+      clear: right;
+      background: #fff;
+      margin: 8px 80px 0 12px; }
+      .chat-box .chat-wrap .row .chat .receiver:after {
+        content: "";
+        height: 8px;
+        width: 10px;
+        border-bottom-left-radius: 5px;
+        display: block;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: -7px; }
+  .chat-box .chat-wrap .row.message label {
+    padding: 10px;
+    width: 100%; }
+  .chat-box .chat-wrap .row.message input {
+    border: none;
+    font-size: 18px;
+    font-weight: 100; }
+    .chat-box .chat-wrap .row.message input:focus {
+      outline: none; }
+  .chat-box .chat-wrap .row.message span {
+    float: right; }
 
 .current-user, .chat-user {
   padding: 15px;

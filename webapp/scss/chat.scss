@@ -7,6 +7,7 @@ $green: #a9c52f;
 
 .chat-box {
   border: 1px solid #ccc;
+  //====== Sidebar ====
   box-shadow: 0px 0px 20px #ccc;
   .sidebar {
     border-right: $border;
@@ -41,6 +42,70 @@ $green: #a9c52f;
       }
     }
   }
+
+  // Chat Wrap
+  .chat-wrap {
+    .row .chat {
+      background: url('../img/pattern.png');
+      padding: 10px 0;
+      .sender, .receiver {
+        padding: 5px;
+        word-break: break-word;
+      }
+      .sender {
+        position: relative;
+        float: right;
+        clear: left;
+        background: $green;
+        margin: 8px 12px 0 80px;
+        &:after {
+          content: "";
+          height: 8px;
+          position: absolute;
+          width: 10px;
+          border-top-right-radius: 55px;
+          display: block;
+          background: #a9c52f;
+          right: -8px;  bottom: 0px;
+        }
+      }
+      .receiver {
+        position: relative;
+        float:left;
+        clear: right;
+        background: #fff;
+        margin: 8px 80px 0 12px;
+        &:after {
+          content: "";
+          height: 8px;
+          width: 10px;
+          border-bottom-left-radius: 5px;
+          display: block;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          left: -7px;
+        }
+      }
+
+    }
+
+    .row.message {
+      label {
+        padding: 10px; width: 100%;
+      }
+      input {
+        border: none;
+        font-size: 18px;
+        font-weight: 100;
+        &:focus { outline: none; }
+      }
+      span {
+        float: right;
+      }
+    }
+  }
+
 }
 
 

@@ -88,11 +88,24 @@
 
               <div class="row">
                   <div class="chat">
+                      <div class="sender"> ksdja asjd</div>
+                      <div class="receiver">sakdjlks</div>
+                      <div class="sender"> ksdja asjd</div>
+                      <div class="receiver">sakdjlks</div>
+                      <div class="sender"> ksdja asjd</div>
+                      <div class="receiver">sakdjlks</div>
+                      <div style="clear:both;">
 
+                      </div>
                   </div>
               </div>
 
-
+              <div class="message row">
+                <label>
+                  <input type="text" name="message" placeholder="Type a message">
+                  <span class="fa fa-send fa-2x"></span>
+                </label>
+              </div>
 
             </div>
           </div>

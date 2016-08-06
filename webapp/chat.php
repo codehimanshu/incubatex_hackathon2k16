@@ -31,14 +31,18 @@
   <body>
   	<header>
 		WELCOME <?php echo $_SESSION["user"]; ?>
+    <a href="logout.php">Logout</a>
   	</header>
   	<section>
       <?php
         $result=mysql_query("SELECT * FROM user");
-        while($row=mysql_fetch_assoc($result))
-        {
+        while($row=mysql_fetch_assoc($result)):
+        ?>
+        <?php 
           echo $row["username"]  . "<br>";
-        }
+        ?>
+        <?php
+        endwhile;
       ?>
 	  </section>
 	  <footer>

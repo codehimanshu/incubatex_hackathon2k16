@@ -31,6 +31,7 @@
   <body>
   	<header>
 		WELCOME <?php echo $_SESSION["user"]; ?>
+		<a href="logout.php">Logout</a>
   	</header>
   	<section>
   		<a href="chat.php">Chat</a>

@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  require_once 'db_connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -46,7 +51,7 @@
                 </label>
               </div>
 
-              <button class="submit" type="submit" name="button">Login</button>
+              <button class="submit" type="submit" name="login">Login</button>
 
               <div class="bottom">
                 <p> Dont have an account? <a class="show-signup">Sign Up</a></p>
@@ -61,11 +66,12 @@
               <p>Create New Account</p>
             </div>
             <form action="check.php" method="post">
-
+              <input class="form-control" type="email" name="email" placeholder="Email">
               <input class="form-control" type="text" name="username" placeholder="Username">
               <input class="form-control" type="password" name="password" placeholder="Password">
 
-              <button class="submit" type="submit" name="button">Sign Up</button>
+              <button class="submit" type="submit" name="signup">Sign Up</button>
+              <?php if(isset($_SESSION["signerror"])) echo $_SESSION["signerror"]; session_destroy(); ?>
 
               <div class="bottom">
                 <p> Already registered? <a class="show-login">Sign In</a></p>

@@ -46,16 +46,19 @@ $green: #a9c52f;
   // Chat Wrap
   .chat-wrap {
     .row .chat {
+      overflow: auto;
       background: url('../img/pattern.png');
-      padding: 10px 0;
       .sender, .receiver {
         padding: 5px;
         word-break: break-word;
+        border-radius: 4px;
+
       }
       .sender {
         position: relative;
         float: right;
         clear: left;
+        color: #fff;
         background: $green;
         margin: 8px 12px 0 80px;
         &:after {

@@ -77,17 +77,17 @@
               </div>
             </div>
             <!-- Chat section -->
-            <div class="chat-wrap hide col-xs-12 col-sm-8">
+            <div class="chat-wrap hidden-xs col-xs-12 col-sm-8">
 
               <div class="chat-user row">
                 <img class="user img-responsive" src="http://placehold.it/300/09f/fff.png" alt="Image" />
-                <a href="#">Username</a>
+                <a class="username" href="#">Username</a>
                 <button type="button" class="back btn btn-default dropdown-toggle pull-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="fa fa-angle-left fa-2x"></span>
                 </button>
               </div>
 
-              <div class="row">
+              <div class="convo row">
                   <div class="chat">
 
                   </div>
@@ -97,7 +97,7 @@
 
               <div class="message row">
                 <label>
-                  <input id="msg" type="text" name="message" placeholder="Type a message">
+                  <input id="msg" type="text" name="message" placeholder="Type a message" required title="Messages cant be empty.">
                   <span id="send-msg" class="fa fa-send fa-2x"></span>
                 </label>
               </div>

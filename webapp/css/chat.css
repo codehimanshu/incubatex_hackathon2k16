@@ -27,15 +27,17 @@
       .chat-box .list .user-list li:not(:last-child) {
         border-bottom: 1px solid #ccc; }
   .chat-box .chat-wrap .row .chat {
-    background: url("../img/pattern.png");
-    padding: 10px 0; }
+    overflow: auto;
+    background: url("../img/pattern.png"); }
     .chat-box .chat-wrap .row .chat .sender, .chat-box .chat-wrap .row .chat .receiver {
       padding: 5px;
-      word-break: break-word; }
+      word-break: break-word;
+      border-radius: 4px; }
     .chat-box .chat-wrap .row .chat .sender {
       position: relative;
       float: right;
       clear: left;
+      color: #fff;
       background: #a9c52f;
       margin: 8px 12px 0 80px; }
       .chat-box .chat-wrap .row .chat .sender:after {

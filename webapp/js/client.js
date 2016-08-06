@@ -42,22 +42,24 @@ $(".get-data").click(function(){
       console.log(data);
     }
   });
-
 });
 
 var userSelected;
 // Show chats on clicking a user li
 $(".user-list li").on("click", function(){
   userSelected = $(this).text();
-  $(".sidebar").addClass("hide");
-  $(".chat-wrap").removeClass("hide");
+  $(".chat-user a").html(userSelected);
+  $(".sidebar").addClass("hidden-xs");
+  $(".chat-wrap").removeClass("hidden-xs");
 
+  // Adjust Height
+  chatsHeight();
 });
 
 // Hide chats on  clicking back button
 $(".back").on("click", function(){
-  $(".chat-wrap").addClass("hide");
-  $(".sidebar").removeClass("hide");
+  $(".chat-wrap").addClass("hidden-xs");
+  $(".sidebar").removeClass("hidden-xs");
 
 });
 
@@ -73,3 +75,26 @@ $("#send-msg").on("click", function(){
     }
   });
 });
+
+$("#msg").on("keydown", function(e){
+  if(e.keyCode == 13)
+    $("#send-msg").click();
+});
+
+
+// FIND HIeGHt
+var chatsHeight = function() {
+      var topHeight = Number ($(".row.chat-user").outerHeight() );
+      var bottomHeight =  Number ( $(".row.message").outerHeight() );
+			var fixedHeight = $(window).height() - topHeight - bottomHeight;
+			$(".convo.row .chat").height(fixedHeight);
+      console.log(fixedHeight);
+};
+
+var usersHeight = function() {
+      var topHeight = Number ($(".row.current-user").outerHeight() );
+			var fixedHeight = $(window).height() - topHeight;
+			$(".list.row").height(fixedHeight);
+      console.log(fixedHeight);
+};
+usersHeight();

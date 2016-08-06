@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Custom stylesheets -->
-    <link rel="stylesheet" href="/css/login.css"  charset="utf-8">
+    <link rel="stylesheet" href="css/login.css"  charset="utf-8">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,49 +30,45 @@
     <!--login-->
     <div class='container-fluid '>
       <div class="row">
-          <div class="login col-xs-12 col-sm-4">
+          <div class="login text-center col-xs-12 col-sm-4 col-sm-push-4">
             <div class="top">
-              <span class="fa fa-envira"></span>
+              <span class="fa fa-envira fa-2x"></span>
               <p>Web Login</p>
             </div>
             <form action="check.php" method="post">
+
               <input class="form-control" type="text" name="username" placeholder="Username">
               <input class="form-control" type="password" name="password" placeholder="Password">
               <div class='radio'>
                 <label>
                   <input type='radio' name='remember' disabled>
-                  Remember Me
+                  <span></span>Remember Me
                 </label>
               </div>
 
-              <button type="submit" name="button">Login</button>
+              <button class="submit" type="submit" name="button">Login</button>
 
               <div class="bottom">
-                <p> Dont have a acoount? <a class="show-signup">Sign Up</a></p>
+                <p> Dont have an account? <a class="show-signup">Sign Up</a></p>
               </div>
             </form>
           </div>
       </div>
       <div class="row">
-          <div class="signup col-xs-12 col-sm-4">
-            <div class="">
-              <span class="fa fa-envira"></span>
+          <div class="signup hide text-center col-xs-12  col-sm-4 col-sm-push-4">
+            <div class="top">
+              <span class="fa fa-envira fa-2x"></span>
               <p>Create New Account</p>
             </div>
             <form action="check.php" method="post">
+
               <input class="form-control" type="text" name="username" placeholder="Username">
               <input class="form-control" type="password" name="password" placeholder="Password">
-              <div class='radio'>
-                <label>
-                  <input type='radio' name='remember' disabled>
-                  Remember Me
-                </label>
-              </div>
 
-              <button type="submit" name="button">Sign Up</button>
+              <button class="submit" type="submit" name="button">Sign Up</button>
 
               <div class="bottom">
-                <p> Already have an acoount? <a class="show-login">Sign In</a></p>
+                <p> Already registered? <a class="show-login">Sign In</a></p>
               </div>
             </form>
           </div>
@@ -90,5 +86,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="js/login.js"></script>
   </body>
 </html>

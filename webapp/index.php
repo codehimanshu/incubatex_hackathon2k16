@@ -44,7 +44,7 @@
                 </label>
               </div>
 
-              <button type="submit" name="button">Login</button>
+              <button type="submit" name="login">Login</button>
 
               <div class="bottom">
                 <p> Dont have a acoount? <a class="show-signup">Sign Up</a></p>
@@ -59,6 +59,7 @@
               <p>Create New Account</p>
             </div>
             <form action="check.php" method="post">
+              <input class="form-control" type="email" name="email" placeholder="Email">
               <input class="form-control" type="text" name="username" placeholder="Username">
               <input class="form-control" type="password" name="password" placeholder="Password">
               <div class='radio'>

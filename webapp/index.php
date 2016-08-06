@@ -12,7 +12,8 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-
+    <!-- Custom stylesheets -->
+    <link rel="stylesheet" href="/css/login.css"  charset="utf-8">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -30,7 +31,7 @@
     <div class='container-fluid '>
       <div class="row">
           <div class="login col-xs-12 col-sm-4">
-            <div class="">
+            <div class="top">
               <span class="fa fa-envira"></span>
               <p>Web Login</p>
             </div>

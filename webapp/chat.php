@@ -39,7 +39,9 @@
         while($row=mysql_fetch_assoc($result)):
         ?>
         <?php 
-          echo $row["username"]  . "<br>";
+          echo "<br>" . $row["username"];
+          if($row["status"]==1)
+          	echo "<span></span>";
         ?>
         <?php
         endwhile;

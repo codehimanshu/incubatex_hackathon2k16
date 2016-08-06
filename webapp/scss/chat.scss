@@ -1,5 +1,10 @@
 $border: 1px solid #ccc;
 $green: #a9c52f;
+$darkGreen: #2a948a;
+
+body {
+  overflow: hidden;
+}
 
 .full.container-fluid {
   padding:0;
@@ -27,6 +32,7 @@ $green: #a9c52f;
 
   .list {
     position: relative;
+    overflow: auto;
     .user-list {
       padding:10px;
       li {
@@ -52,14 +58,13 @@ $green: #a9c52f;
         padding: 5px;
         word-break: break-word;
         border-radius: 4px;
-
       }
       .sender {
         position: relative;
         float: right;
         clear: left;
         color: #fff;
-        background: $green;
+        background: $darkGreen;
         margin: 8px 12px 0 80px;
         &:after {
           content: "";
@@ -68,7 +73,7 @@ $green: #a9c52f;
           width: 10px;
           border-top-right-radius: 55px;
           display: block;
-          background: #a9c52f;
+          background: $darkGreen;
           right: -8px;  bottom: 0px;
         }
       }
@@ -110,6 +115,15 @@ $green: #a9c52f;
     }
   }
 
+  .welcome-text button {
+      border: none;
+      background: $darkGreen;
+      padding: 20px 30px;
+      color: #fff; letter-spacing: 2px;
+      font-weight: bold;
+      display: block;
+      margin: 20% auto;
+  }
 }
 
 

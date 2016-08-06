@@ -47,10 +47,11 @@ $(".get-data").click(function(){
 var userSelected;
 // Show chats on clicking a user li
 $(".user-list li").on("click", function(){
+  $(".welcome-text").addClass("hide");
   userSelected = $(this).text();
   $(".chat-user a").html(userSelected);
   $(".sidebar").addClass("hidden-xs");
-  $(".chat-wrap").removeClass("hidden-xs");
+  $(".chat-wrap").removeClass("hide hidden-xs");
 
   // Adjust Height
   chatsHeight();

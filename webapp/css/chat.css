@@ -1,3 +1,6 @@
+body {
+  overflow: hidden; }
+
 .full.container-fluid {
   padding: 0; }
 
@@ -14,7 +17,8 @@
     box-shadow: 1px 1px 3px #ccc;
     transition: all 0.4s ease; }
   .chat-box .list {
-    position: relative; }
+    position: relative;
+    overflow: auto; }
     .chat-box .list .user-list {
       padding: 10px; }
       .chat-box .list .user-list li {
@@ -38,7 +42,7 @@
       float: right;
       clear: left;
       color: #fff;
-      background: #a9c52f;
+      background: #2a948a;
       margin: 8px 12px 0 80px; }
       .chat-box .chat-wrap .row .chat .sender:after {
         content: "";
@@ -47,7 +51,7 @@
         width: 10px;
         border-top-right-radius: 55px;
         display: block;
-        background: #a9c52f;
+        background: #2a948a;
         right: -8px;
         bottom: 0px; }
     .chat-box .chat-wrap .row .chat .receiver {
@@ -78,6 +82,15 @@
   .chat-box .chat-wrap .row.message span {
     float: right;
     cursor: pointer; }
+  .chat-box .welcome-text button {
+    border: none;
+    background: #2a948a;
+    padding: 20px 30px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: block;
+    margin: 20% auto; }
 
 .current-user, .chat-user {
   padding: 15px;

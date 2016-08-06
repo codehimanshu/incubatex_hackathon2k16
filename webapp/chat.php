@@ -77,7 +77,7 @@
               </div>
             </div>
             <!-- Chat section -->
-            <div class="chat-wrap hidden-xs col-xs-12 col-sm-8">
+            <div class="chat-wrap hide hidden-xs col-xs-12 col-sm-8">
 
               <div class="chat-user row">
                 <img class="user img-responsive" src="http://placehold.it/300/09f/fff.png" alt="Image" />
@@ -86,6 +86,8 @@
                   <span class="fa fa-angle-left fa-2x"></span>
                 </button>
               </div>
+
+
 
               <div class="convo row">
                   <div class="chat">
@@ -103,6 +105,11 @@
               </div>
 
             </div>
+
+            <div class="welcome-text hidden-xs col-sm-8">
+              <button> Start A Chat From Left Bar </button>
+            </div>
+
           </div>
       </div>
     </div>

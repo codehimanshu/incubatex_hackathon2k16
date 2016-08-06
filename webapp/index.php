@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  require_once 'db_connect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +18,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <!-- Custom stylesheets -->
-    <link rel="stylesheet" href="/css/login.css"  charset="utf-8">
+    <link rel="stylesheet" href="css/login.css"  charset="utf-8">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -70,8 +75,8 @@
                 </label>
               </div>
 
-              <button type="submit" name="button">Sign Up</button>
-
+              <button type="submit" name="signup">Sign Up</button>
+              <?php if(isset($_SESSION["signerror"])) echo $_SESSION["signerror"]; session_destroy(); ?>
               <div class="bottom">
                 <p> Already have an acoount? <a class="show-login">Sign In</a></p>
               </div>

@@ -26,6 +26,8 @@ $.fn.marginLeftCalc = function() {
 if($(window).width() > 400) {
   $(".login").marginLeftCalc();
 }
+// ===================login signup logic end=========================
+
 
 // ajax to show chats
 $(".get-data").click(function(){
@@ -43,9 +45,10 @@ $(".get-data").click(function(){
 
 });
 
-
+var userSelected;
 // Show chats on clicking a user li
 $(".user-list li").on("click", function(){
+  userSelected = $(this).text();
   $(".sidebar").addClass("hide");
   $(".chat-wrap").removeClass("hide");
 
@@ -56,4 +59,17 @@ $(".back").on("click", function(){
   $(".chat-wrap").addClass("hide");
   $(".sidebar").removeClass("hide");
 
+});
+
+$("#send-msg").on("click", function(){
+  var chatText = $("#msg").val();
+  console.log(chatText);
+  $.ajax({
+    type: 'POST',
+    url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
+    data : 'msg='+chatText+"&receiver="+userSelected,
+    success: function(data) {
+      console.log(data);
+    }
+  });
 });

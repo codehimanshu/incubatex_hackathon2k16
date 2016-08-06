@@ -2,7 +2,7 @@
 
 	if(isset($_POST['id']))
 	{
-		
+
 		require_once 'db_connect.php';
 		$id=$_POST["id"];
 		$result=mysql_query("SELECT * FROM message WHERE sender='$id' OR receiver='$id'",$link) or die(mysql_error());
@@ -26,6 +26,12 @@
 			<?php
 			endif;
 		endwhile;
+	}
+	if(isset($_POST['receiver'])) {
+		echo "hello world";
+	}
+	if(isset($_POST['msg'])) {
+		echo "hello user";
 	}
 ?>
                   <div style="clear:both;">

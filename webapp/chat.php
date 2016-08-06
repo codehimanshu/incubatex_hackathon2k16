@@ -97,8 +97,8 @@
 
               <div class="message row">
                 <label>
-                  <input type="text" name="message" placeholder="Type a message">
-                  <span class="fa fa-send fa-2x"></span>
+                  <input id="msg" type="text" name="message" placeholder="Type a message">
+                  <span id="send-msg" class="fa fa-send fa-2x"></span>
                 </label>
               </div>
 

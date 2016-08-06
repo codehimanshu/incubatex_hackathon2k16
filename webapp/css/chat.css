@@ -74,7 +74,8 @@
     .chat-box .chat-wrap .row.message input:focus {
       outline: none; }
   .chat-box .chat-wrap .row.message span {
-    float: right; }
+    float: right;
+    cursor: pointer; }
 
 .current-user, .chat-user {
   padding: 15px;

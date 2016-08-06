@@ -42,6 +42,11 @@
         <?php
           echo $row["username"]  . "<br>";
         ?>
+        <?php
+          echo "<br>" . $row["username"];
+          if($row["status"]==1)
+          	echo "<span></span>";
+        ?>
         <!-- end -->
         <?php
         endwhile;

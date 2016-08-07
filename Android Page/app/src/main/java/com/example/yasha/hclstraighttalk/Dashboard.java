@@ -1,6 +1,5 @@
 package com.example.yasha.hclstraighttalk;
 
-import android.app.Notification;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,7 @@ public class Dashboard extends AppCompatActivity {
 
     String navArray[] = {"NETWORKING OPPORTUNITIES", "ADVICE FROM PEERS", "LATEST CAREER MOVES", "LATEST TECHNOLOGY", "CAREER OPPORTUNITY"};
     String[] txt = {
+
             "NETWORKING OPPORTUNITIES",
             "ADVICE FROM PEERS",
             "LATEST CAREER MOVES",
@@ -31,7 +31,7 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
-        Notification adapter = new Notification(Dashboard.this, txt, imageId);
+        com.example.yasha.hclstraighttalk.Notification adapter = new com.example.yasha.hclstraighttalk.Notification(Dashboard.this, txt, imageId);
         System.out.println();
         ListView listView = (ListView) findViewById(R.id.dash_board);
         listView.setAdapter(adapter);
@@ -40,16 +40,16 @@ public class Dashboard extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        Intent coderzActivity = new Intent(Dashboard.this, Coderz.class);
-                        startActivity(coderzActivity);
-                        break;
-                    case 1:
+                        Intent i = new Intent(Dashboard.this, netoppor.class);
+                        startActivity(i);
+                         break;
+                   /* case 1:
                         Intent playItOnActivity = new Intent(Dashboard.this, PlayItOn.class);
                         startActivity(playItOnActivity);
                         break;
                     case 2:
                         Intent roboTilesActivity = new Intent(Dashboard.this, Coderz.class);
-                        startActivity(roboTilesActivity);
+                        startActivity(roboTilesActivity);*/
                 }
             }
         });

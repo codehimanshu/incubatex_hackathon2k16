@@ -22,6 +22,8 @@
     <!-- Custom stylesheets -->
     <link rel="stylesheet" href="css/login.css"  charset="utf-8">
     <link rel="stylesheet" href="css/chat.css"  charset="utf-8">
+    <!-- jQuery (Must for Bootstrap) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -65,7 +67,7 @@
                       ?>
                       <?php
                         if($row["status"]==1)
-                        	echo "<span class='active'></span>";
+                          echo "<span class='active'></span>";
                       ?>
                     </li>
 
@@ -115,11 +117,9 @@
     </div>
 
 
-	  <footer>
+    <footer>
 
-	  </footer>
-    <!-- jQuery (Must for Bootstrap) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    </footer>
     <!-- Bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/client.js"></script>

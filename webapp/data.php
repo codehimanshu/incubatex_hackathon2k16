@@ -1,20 +1,23 @@
 <?php
 //	if(!isset($_SESSION["user"]))
 //		header("Location: index.php");
+	session_start();
 	if(isset($_POST['id']))
 	{
-
+		$count=$_SESSION["counter"];
+		//echo $count;
 		require_once 'db_connect.php';
 		$id=$_POST["id"];
-		$result=mysql_query("SELECT * FROM message WHERE sender='$id' OR receiver='$id'",$link) or die(mysql_error());
+		$result=mysql_query("SELECT * FROM message WHERE (sender='$id' OR receiver='$id') AND id>'$count'",$link) or die(mysql_error());
 		if($result)
 		while($row=mysql_fetch_assoc($result)):
 		?>
 		<?php
+			$_SESSION["counter"]=$row['id'];
 			if($row["sender"]==$id):
 			?>
 			<div class="col-xs-12">
-				<div class=sender>
+				<div class=receiver>
 					<?php echo $row["message"]; ?>
 					<span><?php echo $row["time"]; ?></span>
 				</div>
@@ -23,7 +26,7 @@
 			else:
 			?>
 			<div class="col-xs-12">
-				<div class=receiver>
+				<div class=sender>
 					<?php echo $row["message"]; ?>
 					<span><?php echo $row["time"]; ?></span>
 				</div>
@@ -34,7 +37,7 @@
 	}
 	if(isset($_POST['receiver']))
 	{
-		session_start();
+		//session_start();
 		require_once 'db_connect.php';
 		$sender=$_SESSION["user"];
 		$receiver=$_POST["receiver"];

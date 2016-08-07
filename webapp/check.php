@@ -11,6 +11,7 @@
 			{  
 				$result=mysql_query("UPDATE user SET status=1 WHERE username='$username'",$link) or die(mysql_error());
 				$_SESSION["user"]=$username;
+				$_SESSION["counter"]=0;
 				header("Location: dashboard.php");
 			}
 			else

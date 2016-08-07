@@ -90,7 +90,7 @@
 
 
               <div class="convo row">
-                  <div class="chat">
+                  <div class="chat" id="chat">
 
                   </div>
                   <div style="clear:both;">

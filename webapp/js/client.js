@@ -40,9 +40,10 @@ list.each(function(user){
           $.ajax({
               type: 'POST',
               url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
-              data : "id="+id,
+              data : 'id='+id,
               success: function(data) {
                 $(".chat").append(data);
+                document.getElementById('chat').scrollTop = document.getElementById('chat').scrollHeight ;  
               }
           });
       }
@@ -76,6 +77,7 @@ $(".back").on("click", function(){
 
 $("#send-msg").on("click", function(){
   var chatText = $("#msg").val();
+
   console.log(chatText);
   $.ajax({
     type: 'POST',
@@ -83,6 +85,7 @@ $("#send-msg").on("click", function(){
     data : 'msg='+chatText+"&receiver="+userSelected,
     success: function(data) {
       console.log(data);
+      $("#msg").val() = "";
     }
   });
 });
@@ -113,3 +116,4 @@ function stop()
   clearInterval(store);
   console.log(1);
 }
+

@@ -1,5 +1,6 @@
 <?php
-
+	if(!isset($_SESSION["user"]))
+		header("Location: index.php");
 	if(isset($_POST['id']))
 	{
 
@@ -12,16 +13,20 @@
 		<?php
 			if($row["sender"]==$id):
 			?>
-			<div class=sender>
-				<?php echo $row["message"]; ?>
-				<span><?php echo $row["time"]; ?></span>
+			<div class="col-xs-12">
+				<div class=sender>
+					<?php echo $row["message"]; ?>
+					<span><?php echo $row["time"]; ?></span>
+				</div>
 			</div>
 			<?php
 			else:
 			?>
-			<div class=receiver>
-				<?php echo $row["message"]; ?>
-				<span><?php echo $row["time"]; ?></span>
+			<div class="col-xs-12">
+				<div class=receiver>
+					<?php echo $row["message"]; ?>
+					<span><?php echo $row["time"]; ?></span>
+				</div>
 			</div>
 			<?php
 			endif;

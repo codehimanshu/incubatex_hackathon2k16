@@ -5,10 +5,10 @@
 	  {
 			$username=$_POST["username"];
 			$password=$_POST["password"];
-			$result=mysql_query("SELECT * FROM user WHERE username='$username' AND password='$password' ",$link);
+			$result=mysql_query("SELECT * FROM user WHERE username='$username' AND password='$password' ",$link) or die(mysql_error());
 			$count=mysql_num_rows($result);
-			if($result)
-			{
+			if($count)
+			{  
 				$result=mysql_query("UPDATE user SET status=1 WHERE username='$username'",$link) or die(mysql_error());
 				$_SESSION["user"]=$username;
 				header("Location: chat.php");

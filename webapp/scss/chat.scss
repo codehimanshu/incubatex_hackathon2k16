@@ -5,6 +5,14 @@ $darkGreen: #2a948a;
 body {
   overflow: hidden;
 }
+span.active {
+  position: absolute;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: $darkGreen;
+  border-radius: 100%;
+}
 
 .full.container-fluid {
   padding:0;

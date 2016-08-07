@@ -61,7 +61,7 @@
 
                       <?php
                         echo "<li id='$row[id]' type=button class='get-data user'>";
-                        echo $row["username"]  . "<br>";
+                        echo $row["username"]  ;
                       ?>
                       <?php
                         if($row["status"]==1)

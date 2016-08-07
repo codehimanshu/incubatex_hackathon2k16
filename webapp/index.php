@@ -31,7 +31,7 @@
 
   </header>
   <section>
-
+          <p><?php if(isset($_SESSION["signerror"])) echo $_SESSION["signerror"]; session_destroy(); ?></p>
     <!--login-->
     <div class='container-fluid '>
       <div class="row">
@@ -71,19 +71,18 @@
               <input class="form-control" type="password" name="password" placeholder="Password" required>
 
               <button class="submit" type="submit" name="signup">Sign Up</button>
-              <?php if(isset($_SESSION["signerror"])) echo $_SESSION["signerror"]; session_destroy(); ?>
 
               <div class="bottom">
                 <p> Already registered? <a class="show-login">Sign In</a></p>
               </div>
             </form>
+
           </div>
       </div>
     </div>
 
-
     <!--login as a guest-->
-    <a href="dashboard.php">Login as Guest</a>
+    <!--<a href="dashboard.php">Login as Guest</a>-->
   </section>
   <footer>
 
@@ -92,6 +91,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <!-- Bootstrap script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="js/login.js"></script>
+    <script src="js/client.js"></script>
   </body>
 </html>

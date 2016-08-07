@@ -1,3 +1,119 @@
+body {
+  overflow: hidden; }
 
+span.active {
+  position: absolute;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: #2a948a;
+  border-radius: 100%; }
+
+.full.container-fluid {
+  padding: 0; }
+
+.chat-box {
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 20px #ccc; }
+  .chat-box .sidebar {
+    border-right: 1px solid #ccc; }
+  .chat-box .current-user .dropdown-menu {
+    position: static;
+    float: right;
+    border-radius: 0;
+    border: none;
+    box-shadow: 1px 1px 3px #ccc;
+    transition: all 0.4s ease; }
+  .chat-box .list {
+    position: relative;
+    overflow: auto; }
+    .chat-box .list .user-list {
+      padding: 10px; }
+      .chat-box .list .user-list li {
+        list-style-type: none;
+        font-size: 20px;
+        font-family: monospace;
+        font-weight: bold;
+        margin: 0;
+        padding: 10px; }
+      .chat-box .list .user-list li:not(:last-child) {
+        border-bottom: 1px solid #ccc; }
+  .chat-box .chat-wrap .row .chat {
+    overflow: auto;
+    background: url("../img/pattern.png"); }
+    .chat-box .chat-wrap .row .chat .sender, .chat-box .chat-wrap .row .chat .receiver {
+      padding: 5px;
+      word-break: break-word;
+      border-radius: 4px; }
+    .chat-box .chat-wrap .row .chat .sender {
+      position: relative;
+      float: right;
+      clear: left;
+      color: #fff;
+      background: #2a948a;
+      margin: 8px 12px 0 80px; }
+      .chat-box .chat-wrap .row .chat .sender:after {
+        content: "";
+        height: 8px;
+        position: absolute;
+        width: 10px;
+        border-top-right-radius: 55px;
+        display: block;
+        background: #2a948a;
+        right: -8px;
+        bottom: 0px; }
+    .chat-box .chat-wrap .row .chat .receiver {
+      position: relative;
+      float: left;
+      clear: right;
+      background: #fff;
+      margin: 8px 80px 0 12px; }
+      .chat-box .chat-wrap .row .chat .receiver:after {
+        content: "";
+        height: 8px;
+        width: 10px;
+        border-bottom-left-radius: 5px;
+        display: block;
+        background: #fff;
+        position: absolute;
+        top: 0;
+        left: -7px; }
+  .chat-box .chat-wrap .row.message label {
+    padding: 10px;
+    width: 100%; }
+  .chat-box .chat-wrap .row.message input {
+    border: none;
+    font-size: 18px;
+    font-weight: 100; }
+    .chat-box .chat-wrap .row.message input:focus {
+      outline: none; }
+  .chat-box .chat-wrap .row.message span {
+    float: right;
+    cursor: pointer; }
+  .chat-box .welcome-text button {
+    border: none;
+    background: #2a948a;
+    padding: 20px 30px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+    display: block;
+    margin: 20% auto; }
+
+.current-user, .chat-user {
+  padding: 15px;
+  border-bottom: 1px solid #ccc; }
+  .current-user img, .chat-user img {
+    height: 45px;
+    border-radius: 100%;
+    display: inline-block; }
+  .current-user a, .chat-user a {
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 8px; }
+  .current-user .settings.btn, .current-user .back.btn, .chat-user .settings.btn, .chat-user .back.btn {
+    border: none; }
+    .current-user .settings.btn:focus, .current-user .settings.btn:hover, .current-user .settings.btn:active, .current-user .back.btn:focus, .current-user .back.btn:hover, .current-user .back.btn:active, .chat-user .settings.btn:focus, .chat-user .settings.btn:hover, .chat-user .settings.btn:active, .chat-user .back.btn:focus, .chat-user .back.btn:hover, .chat-user .back.btn:active {
+      background: transparent; }
 
 /*# sourceMappingURL=chat.css.map */

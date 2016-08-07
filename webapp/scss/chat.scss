@@ -1,0 +1,158 @@
+$border: 1px solid #ccc;
+$green: #a9c52f;
+$darkGreen: #2a948a;
+
+body {
+  overflow: hidden;
+}
+span.active {
+  position: absolute;
+  right: 25px;
+  width: 10px;
+  height: 10px;
+  background: $darkGreen;
+  border-radius: 100%;
+}
+
+.full.container-fluid {
+  padding:0;
+}
+
+.chat-box {
+  border: 1px solid #ccc;
+  //====== Sidebar ====
+  box-shadow: 0px 0px 20px #ccc;
+  .sidebar {
+    border-right: $border;
+  }
+  .current-user {
+
+
+    .dropdown-menu {
+      position: static;
+      float:right;
+      border-radius: 0;
+      border:none;
+      box-shadow: 1px 1px 3px #ccc;
+      transition: all 0.4s ease;
+    }
+  }
+
+  .list {
+    position: relative;
+    overflow: auto;
+    .user-list {
+      padding:10px;
+      li {
+        list-style-type: none;
+        font-size: 20px;
+        font-family: monospace;
+        font-weight: bold;
+        margin:0;
+        padding: 10px;
+      }
+      li:not(:last-child) {
+        border-bottom: $border;
+      }
+    }
+  }
+
+  // Chat Wrap
+  .chat-wrap {
+    .row .chat {
+      overflow: auto;
+      background: url('../img/pattern.png');
+      .sender, .receiver {
+        padding: 5px;
+        word-break: break-word;
+        border-radius: 4px;
+      }
+      .sender {
+        position: relative;
+        float: right;
+        clear: left;
+        color: #fff;
+        background: $darkGreen;
+        margin: 8px 12px 0 80px;
+        &:after {
+          content: "";
+          height: 8px;
+          position: absolute;
+          width: 10px;
+          border-top-right-radius: 55px;
+          display: block;
+          background: $darkGreen;
+          right: -8px;  bottom: 0px;
+        }
+      }
+      .receiver {
+        position: relative;
+        float:left;
+        clear: right;
+        background: #fff;
+        margin: 8px 80px 0 12px;
+        &:after {
+          content: "";
+          height: 8px;
+          width: 10px;
+          border-bottom-left-radius: 5px;
+          display: block;
+          background: #fff;
+          position: absolute;
+          top: 0;
+          left: -7px;
+        }
+      }
+
+    }
+
+    .row.message {
+      label {
+        padding: 10px; width: 100%;
+      }
+      input {
+        border: none;
+        font-size: 18px;
+        font-weight: 100;
+        &:focus { outline: none; }
+      }
+      span {
+        float: right;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .welcome-text button {
+      border: none;
+      background: $darkGreen;
+      padding: 20px 30px;
+      color: #fff; letter-spacing: 2px;
+      font-weight: bold;
+      display: block;
+      margin: 20% auto;
+  }
+}
+
+
+.current-user, .chat-user {
+  padding: 15px;
+  border-bottom: $border;
+
+  img {
+    height: 45px;
+    border-radius: 100%;
+    display: inline-block;
+  }
+  a {
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: 8px;
+  }
+  .settings.btn, .back.btn {
+    border:none;
+    &:focus, &:hover, &:active {
+      background: transparent;
+    }
+  }
+}

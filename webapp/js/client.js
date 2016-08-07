@@ -28,6 +28,32 @@ if($(window).width() > 400) {
 }
 // ===================login signup logic end=========================
 
+
+var list = $(".get-data");
+list.each(function(user){
+    $(this).on("click", function(){
+      stop();
+      var id = $(this).context.id;
+      console.log(id);
+
+      setInterval(getData, 500);
+      function getData() {
+          $.ajax({
+              type: 'POST',
+              url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
+              data : "id="+id,
+              success: function(data) {
+                $(".chat").append(data);
+                console.log(data);
+              }
+          });
+      }
+    });
+});
+
+
+// ===============================================
+
 /*
 // ajax to show chats
 var getData = function() {
@@ -47,38 +73,38 @@ var getData = function() {
         console.log(data);
      }
     });
-  
+
 */
 // ajax to show chats
-var store;
-var flag=0;
-$(".get-data").click(function () {
-  flag=1;
-});
-
-var getData = function() {
-  $(".get-data").click(function(){
-      var id = $(this).attr('id');
-      console.log(id);
-      if(flag==1)
-        stop();
-  
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
-      data : "id="+id,
-      success: function(data) {
-        $(".chat").append(data);
-        // console.log(data);
-     }
-    });
-  });
-
-    
-}
-
-$(document).ready(function() {store=setInterval(getData, 500);});
- // 
+// var store;
+// var flag=0;
+// $(".get-data").click(function () {
+//   flag=1;
+// });
+//
+// var getData = function() {
+//   $(".get-data").click(function(){
+//       var id = $(this).attr('id');
+//       console.log(id);
+//       if(flag==1)
+//         stop();
+//
+//     $.ajax({
+//       type: 'POST',
+//       url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
+//       data : "id="+id,
+//       success: function(data) {
+//         $(".chat").append(data);
+//         // console.log(data);
+//      }
+//     });
+//   });
+//
+//
+// }
+//
+// $(document).ready(function() {store=setInterval(getData, 500);});
+ //
 
 var userSelected;
 // Show chats on clicking a user li
@@ -125,14 +151,12 @@ var chatsHeight = function() {
       var bottomHeight =  Number ( $(".row.message").outerHeight() );
 			var fixedHeight = $(window).height() - topHeight - bottomHeight;
 			$(".convo.row .chat").height(fixedHeight);
-      console.log(fixedHeight);
 };
 
 var usersHeight = function() {
       var topHeight = Number ($(".row.current-user").outerHeight() );
 			var fixedHeight = $(window).height() - topHeight;
 			$(".list.row").height(fixedHeight);
-      console.log(fixedHeight);
 };
 usersHeight();
 

@@ -33,6 +33,7 @@ var list = $(".get-data");
 list.each(function(user){
     $(this).on("click", function(){
       stop();
+      document.getElementById('chat').innerHTML="";
       var id = $(this).context.id;
       console.log(id);
 

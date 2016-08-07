@@ -28,21 +28,57 @@ if($(window).width() > 400) {
 }
 // ===================login signup logic end=========================
 
-
+/*
 // ajax to show chats
-$(".get-data").click(function(){
-  var id = (this.getAttribute('id'));
-  console.log(id);
-  $.ajax({
-    type: 'POST',
-    url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
-    data : "id="+id,
-    success: function(data) {
-      $(".chat").append(data);
-      console.log(data);
+var getData = function() {
+  //$(".get-data").click(function(){
+    var x = $(".get-data");
+    for (var i = 0; i < x.length; i++) {
+      var id = x[i].getAttribute('id');
+      console.log(id);
     }
-  });
+
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
+      data : "id="+id,
+      success: function(data) {
+        $(".chat").append(data);
+        console.log(data);
+     }
+    });
+  
+*/
+// ajax to show chats
+var store;
+var flag=0;
+$(".get-data").click(function () {
+  flag=1;
 });
+
+var getData = function() {
+  $(".get-data").click(function(){
+      var id = $(this).attr('id');
+      console.log(id);
+      if(flag==1)
+        stop();
+  
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost/incubatex_hackathon2k16/webapp/data.php',
+      data : "id="+id,
+      success: function(data) {
+        $(".chat").append(data);
+        // console.log(data);
+     }
+    });
+  });
+
+    
+}
+
+$(document).ready(function() {store=setInterval(getData, 500);});
+ // 
 
 var userSelected;
 // Show chats on clicking a user li
@@ -99,3 +135,9 @@ var usersHeight = function() {
       console.log(fixedHeight);
 };
 usersHeight();
+
+function stop()
+{
+  clearInterval(store);
+  console.log(1);
+}

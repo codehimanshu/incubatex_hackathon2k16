@@ -11,7 +11,7 @@
 			{  
 				$result=mysql_query("UPDATE user SET status=1 WHERE username='$username'",$link) or die(mysql_error());
 				$_SESSION["user"]=$username;
-				header("Location: chat.php");
+				header("Location: dashboard.php");
 			}
 			else
 			{

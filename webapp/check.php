@@ -43,10 +43,10 @@
 				}
 				else
 				{
-					$result3=mysql_query("INSERT INTO user VALUES ('','$email','$username','$password')",$link) or die(mysql_error());
+					$result3=mysql_query("INSERT INTO user VALUES ('','$email','$username','$password','')",$link) or die(mysql_error());
 					if($result3)
 					{
-					  $_SESSION["user"]="logged";
+					  $_SESSION["user"]=$username;
 					  header("Location: chat.php");
 					}
 					else

@@ -122,3 +122,10 @@ $(document).ready(function() {
 
 
 });
+
+//confirm password
+$('#con_password').on('keyup', function () {
+    if ($(this).val() == $('#password').val()) {
+        $('#message').html('<button class="submit" type="submit" name="signup">Sign Up</button>').css('color', 'green');
+    } else $('#message').html('Password Doesn\'t Match').css('color', 'red');
+});

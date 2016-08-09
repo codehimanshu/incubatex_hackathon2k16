@@ -1,11 +1,15 @@
 $(document).ready(function() {
   // body...
   $(".show-signup").on("click", function(){
+
+    $('.submit').addClass("hide");
+
     $(".signup").removeClass("hide");
     $(".login").addClass("hide");
     if($(window).width() > 400) {
       $(".signup").marginLeftCalc();
     }
+
   });
 
   $(".show-login").on("click", function(){
@@ -13,6 +17,17 @@ $(document).ready(function() {
     $(".login").removeClass("hide");
     if($(window).width() > 400) {
       $(".login").marginLeftCalc();
+    }
+  });
+
+  $(".forgotpass").on("click", function(){
+
+    $('.submit').addClass("hide");
+
+    $(".signup, .login").addClass("hide");
+    $(".newpass").removeClass("hide");
+    if($(window).width() > 400) {
+      $(".newpass").marginLeftCalc();
     }
   });
 
@@ -46,7 +61,7 @@ $(document).ready(function() {
                 data : 'id='+id,
                 success: function(data) {
                   $(".chat").append(data);
-                  document.getElementById('chat').scrollTop = document.getElementById('chat').scrollHeight ;  
+                  document.getElementById('chat').scrollTop = document.getElementById('chat').scrollHeight ;
                 }
             });
         }
@@ -124,8 +139,22 @@ $(document).ready(function() {
 });
 
 //confirm password
-$('#con_password').on('keyup', function () {
-    if ($(this).val() == $('#password').val()) {
-        $('#message').html('<button class="submit" type="submit" name="signup">Sign Up</button>').css('color', 'green');
-    } else $('#message').html('Password Doesn\'t Match').css('color', 'red');
+$('.con_password').on('keyup', function () {
+    if ($(this).val() == $('.password').val()) {
+      $('.message').hide();
+      $('.submit').removeClass("hide");
+    } else {
+      $('.submit').addClass("hide");
+      $('.message').show().html('Password Doesn\'t Match').css('color', 'red');
+    }
+});
+
+$('.password').on('keyup', function () {
+    if ($(this).val() == $('.con_password').val()) {
+        $('.message').hide();
+        $('.submit').removeClass("hide");
+    } else {
+      $('.submit').addClass("hide");
+      $('.message').show().html('Password Doesn\'t Match').css('color', 'red');
+    }
 });

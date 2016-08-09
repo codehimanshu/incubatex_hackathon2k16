@@ -54,6 +54,7 @@
               <button class="submit" type="submit" name="login">Login</button>
 
               <div class="bottom">
+                <a class="forgotpass"> Forgot password? </a>
                 <p> Dont have an account? <a class="show-signup">Sign Up</a></p>
               </div>
             </form>
@@ -68,14 +69,33 @@
             <form action="check.php" method="post">
               <input class="form-control" type="email" name="email" placeholder="Email" required>
               <input class="form-control" type="text" name="username" placeholder="Username" required>
-              <input class="form-control" type="password" name="password" id="password" placeholder="Password" required>
-              <input class="form-control" type="password" name="con_password" id="con_password" placeholder="Retype Password" required>
+              <input class="form-control password" type="password" name="password"  placeholder="Password" required>
+              <input class="form-control con_password" type="password" name="con_password"  placeholder="Retype Password" required>
               <!--sign up button in js within message-->
-              <span id='message'></span>
+              <button class="submit hide" type="submit" name="signup">Sign Up</button>
+              <span class='message'></span>
 
               <div class="bottom">
                 <p> Already registered? <a class="show-login">Sign In</a></p>
               </div>
+            </form>
+
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="newpass hide text-center col-xs-12  col-sm-5 col-md-4 not-center">
+            <div class="top">
+              <span class="fa fa-envira fa-2x"></span>
+              <p>Set new password</p>
+            </div>
+            <form action="check.php" method="post">
+              <input class="form-control" type="text" name="username" placeholder="Username" required>
+              <input class="form-control password" type="password" name="password"  placeholder="Type a new password" required>
+              <input class="form-control con_password" type="password" name="con_password"  placeholder="Retype Password" required>
+              <button class="submit hide" type="submit" name="reset"> Change My Pass </button>
+              <span class='message'></span>
+
             </form>
 
           </div>

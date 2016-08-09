@@ -69,8 +69,8 @@
             <form action="check.php" method="post">
               <input class="form-control" type="email" name="email" placeholder="Email" required>
               <input class="form-control" type="text" name="username" placeholder="Username" required>
-              <input class="form-control password" type="password" name="password"  placeholder="Password" required>
-              <input class="form-control con_password" type="password" name="con_password"  placeholder="Retype Password" required>
+              <input class="form-control pssword" type="password" name="password"  placeholder="Password" required>
+              <input class="form-control con_pssword" type="password" name="con_password"  placeholder="Retype Password" required>
               <!--sign up button in js within message-->
               <button class="submit hide" type="submit" name="signup">Sign Up</button>
               <span class='message'></span>

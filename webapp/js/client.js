@@ -149,10 +149,10 @@ $('.con_password').on('keyup', function () {
     }
 });
 
-$('.password').on('keyup', function () {
-    if ($(this).val() == $('.con_password').val()) {
-        $('.message').hide();
-        $('.submit').removeClass("hide");
+$('.con_pssword').on('keyup', function () {
+    if ($(this).val() == $('.pssword').val()) {
+      $('.message').hide();
+      $('.submit').removeClass("hide");
     } else {
       $('.submit').addClass("hide");
       $('.message').show().html('Password Doesn\'t Match').css('color', 'red');

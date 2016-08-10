@@ -34,7 +34,25 @@
 		<a href="logout.php">Logout</a>
   	</header>
   	<section>
-  		<a href="chat.php">Chat</a>
+      <?php
+        $user = $_SESSION["user"];
+        $result=mysql_query("SELECT * FROM user WHERE username='$user'",$link);
+        $result=mysql_fetch_assoc($result);
+        $result1=$result["confirmation"];
+        if($result1!=1):
+          ?>
+        <?php
+          echo "Your email ID hs not been confirmed yet. Please check your email at " . $result["email"] . ".";
+          ?>
+          <form action="" method=post>
+            <button type=submit name="resend">RESEND EMAIL</button>
+          </form>
+          <?php
+        else:
+          echo "<a href=chat.php>Chat</a>";
+        endif;
+
+      ?>
 	  </section>
 	  <footer>
 

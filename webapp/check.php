@@ -12,7 +12,7 @@
 				$result=mysql_query("UPDATE user SET status=1 WHERE username='$username'",$link) or die(mysql_error());
 				$_SESSION["user"]=$username;
 				$_SESSION["counter"]=0;
-				header("Location: chat.php");
+				header("Location: dashboard.php");
 			}
 			else
 			{
@@ -22,7 +22,7 @@
 	  }
 	  else if(isset($_POST["signup"]))
 	  {
-			echo "1";
+			//echo "1";
 			$email=$_POST["email"];
 			$username=$_POST["username"];
 			$password=$_POST["password"];
@@ -44,11 +44,39 @@
 				}
 				else
 				{
-					$result3=mysql_query("INSERT INTO user VALUES ('','$email','$username','$password','')",$link) or die(mysql_error());
+					//sendmail not working on localhost, only for global hosting
+					$var=rand(1000001,9999999);
+					$url="http://www.fan4.esy.es/".$var;
+					$to = $email;
+					$subject = "HTML email";
+
+					$message = "
+					<html>
+					<head>
+					<title>HackChat</title>
+					</head>
+					<body>
+					<p>Please Click on the link below to confirm yout account </p>"
+					. $url;
+					"</body>
+					</html>
+					";
+
+					// Always set content-type when sending HTML email
+					$headers = "MIME-Version: 1.0" . "\r\n";
+					$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+					// More headers
+					$headers .= 'From: <noreply@fan4.exy.ex>' . "\r\n";
+
+					mail($to,$subject,$message,$headers);
+
+
+					$result3=mysql_query("INSERT INTO user VALUES ('','$email','$username','$password','','$var')",$link) or die(mysql_error());
 					if($result3)
 					{
 					  $_SESSION["user"]=$username;
-					  header("Location: chat.php");
+					  header("Location: dashboard.php");
 					}
 					else
 					{

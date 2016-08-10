@@ -86,8 +86,49 @@
 				}
 		  }
 		}
-	  else
+	  else if(isset($_POST["reset"]))
 	  {
+	  	$email=$_POST["email"];
+	  	$result=mysql_query("SELECT * FROM user WHERE email='$email'",$link);
+	  	$count=mysql_num_rows($result);
+	  	if ($count)
+	  	{
+	  		$result=mysql_fetch_assoc($result);
+	  		$pass=$result["password"];
+			$var=rand(1000001,9999999);
+			$url="http://www.fan4.esy.es/".$var;
+			$to = $email;
+			$subject = "HTML email";
+
+			$message = "
+			<html>
+			<head>
+			<title>HackChat</title>
+			</head>
+			<body>
+			<p>Your password is </p>"
+			. $pass;
+			" Please change your password after login</body>
+			</html>
+			";
+
+			// Always set content-type when sending HTML email
+			$headers = "MIME-Version: 1.0" . "\r\n";
+			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+			// More headers
+			$headers .= 'From: <noreply@fan4.exy.ex>' . "\r\n";
+
+			mail($to,$subject,$message,$headers);
+			echo "Email has been sent to" . $result["email"] . ". Please login again.";
+	  	}
+	  	else
+	  	{
+	  		echo "Email not Yet registered. Please Sign Up";	  		
+	  	}
+	 }
+	else
+	{
 		$_SESSION["user"]="guest";
-	  }
+	}
 	?>

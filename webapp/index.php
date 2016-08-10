@@ -90,12 +90,8 @@
               <p>Set new password</p>
             </div>
             <form action="check.php" method="post">
-              <input class="form-control" type="text" name="username" placeholder="Username" required>
-              <input class="form-control password" type="password" name="password"  placeholder="Type a new password" required>
-              <input class="form-control con_password" type="password" name="con_password"  placeholder="Retype Password" required>
-              <button class="submit hide" type="submit" name="reset"> Change My Pass </button>
-              <span class='message'></span>
-
+              <input class="form-control" type="email" name="email" placeholder="Email" required>
+              <button class="submit" type="submit" name="reset"> Change My Pass </button>
             </form>
 
           </div>
